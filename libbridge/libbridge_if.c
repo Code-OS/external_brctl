@@ -20,7 +20,11 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#ifndef FEATURE_ANDROID
 #include <sys/fcntl.h>
+#else
+#include <fcntl.h>
+#endif
 #include <sys/ioctl.h>
 
 #include "libbridge.h"

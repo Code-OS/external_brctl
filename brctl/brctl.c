@@ -24,7 +24,6 @@
 
 #include "libbridge.h"
 #include "config.h"
-
 #include "brctl.h"
 
 static void help()
@@ -39,9 +38,9 @@ int main(int argc, char *const* argv)
 	const struct command *cmd;
 	int f;
 	static const struct option options[] = {
-		{ .name = "help", .val = 'h' },
-		{ .name = "version", .val = 'V' },
-		{ 0 }
+		{ .name = "help", .has_arg = '0', .flag = 0, .val = 'h' },
+		{ .name = "version", .has_arg = '0', .flag = 0, .val = 'V' },
+		{ 0,0,0,0 }
 	};
 
 	while ((f = getopt_long(argc, argv, "Vh", options, NULL)) != EOF) 

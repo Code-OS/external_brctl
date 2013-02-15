@@ -23,8 +23,11 @@
 #include <errno.h>
 #include <string.h>
 #include <dirent.h>
+#ifndef FEATURE_ANDROID
 #include <sys/fcntl.h>
-
+#else
+#include <fcntl.h>
+#endif
 #include "libbridge.h"
 #include "libbridge_private.h"
 

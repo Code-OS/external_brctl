@@ -22,7 +22,9 @@
 #include <sys/socket.h>
 #include <linux/if.h>
 #include <linux/if_bridge.h>
-
+#ifdef FEATURE_ANDROID
+#include <sys/time.h>
+#endif
 /* defined in net/if.h but that conflicts with linux/if.h... */
 extern unsigned int if_nametoindex (const char *__ifname);
 extern char *if_indextoname (unsigned int __ifindex, char *__ifname);
